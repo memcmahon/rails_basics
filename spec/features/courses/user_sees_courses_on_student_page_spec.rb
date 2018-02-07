@@ -7,9 +7,9 @@ describe "user sees all course enrollments on student page" do
       course_1 = Course.create!(subject: "Defense Against the Dark Arts")
       course_2 = Course.create!(subject: "Transfiguration")
       course_3 = Course.create!(subject: "Potions")
-      StudentCourses.create(student: student, course: course_1)
-      StudentCourses.create(student: student, course: course_2)
-      StudentCourses.create(student: student, course: course_3)
+      StudentCourse.create(student: student, course: course_1)
+      StudentCourse.create(student: student, course: course_2)
+      StudentCourse.create(student: student, course: course_3)
       visit student_path(student)
 
       expect(page).to have_content("Course List")
