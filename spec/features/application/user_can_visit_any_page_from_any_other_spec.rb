@@ -61,4 +61,15 @@ describe "user navigation" do
       expect(current_path).to eq(new_student_path)
     end
   end
+
+  describe "user can link to student from student index" do
+    it "they visit students_path" do
+      student = Student.create!(name: "Sirius Black")
+      visit students_path
+
+      click_on("Sirius Black")
+
+      expect(current_path).to eq(student_path(student))
+    end
+  end
 end
