@@ -17,7 +17,7 @@ describe "user navigation" do
     end
 
     it "they visit student_path" do
-      Student.create!(name: "Sirius Black")
+      student = Student.create!(name: "Sirius Black")
       visit student_path(student)
 
       click_on("Student Index")
@@ -32,7 +32,7 @@ describe "user navigation" do
     end
 
     it "they visit edit_student_path" do
-      Student.create!(name: "Sirius Black")
+      student = Student.create!(name: "Sirius Black")
       visit edit_student_path(student)
 
       click_on("Student Index")
@@ -47,7 +47,7 @@ describe "user navigation" do
     end
 
     it "they visit new_student_path" do
-      Student.create!(name: "Sirius Black")
+      student = Student.create!(name: "Sirius Black")
       visit new_student_path(student)
 
       click_on("Student Index")
