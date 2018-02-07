@@ -7,10 +7,10 @@ describe "user can edit an existing student" do
       student_2 = Student.create!(name: "Remus Lupin")
       visit edit_student_path(student_1)
 
-      fill_in("student[name]", with: "Jimmy Potter")
+      fill_in("student[name]", with: "Prongs")
       click_on("Update Student")
 
-      expect(page).to have_content("Jimmy Potter")
+      expect(page).to have_content("Prongs")
       expect(page).to_not have_content("James")
       expect(page).to_not have_content("Remus")
     end
