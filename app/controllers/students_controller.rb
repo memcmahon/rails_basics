@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id])
+    call_student
     @addresses = @student.addresses
     @courses = @student.courses
   end
@@ -20,21 +20,26 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Student.find(params[:id])
+    call_student
   end
 
   def update
-    @student = Student.find(params[:id])
+    call_student
     @student.update(student_params)
     redirect_to student_path(@student)
   end
 
   def destroy
-    Student.destroy(params[:id])
+    call_student
+    @student.destroy
     redirect_to students_path
   end
 
   private
+
+  def call_student
+    @student = Student.find(params[:id])
+  end
 
   def student_params
     params.require(:student).permit(:name)
