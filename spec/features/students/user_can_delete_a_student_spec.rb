@@ -12,7 +12,7 @@ describe "user can delete a student" do
       click_on("Delete", match: :first)
 
       expect(page).to_not have_content("Peter Pettigrew")
-      expect(page).to_not have_content("Sirius Black")
+      expect(page).to have_content("Sirius Black")
       expect(page).to have_content("Remus Lupin")
       expect(page).to have_content("James Potter")
       expect(Student.count).to eq(3)
