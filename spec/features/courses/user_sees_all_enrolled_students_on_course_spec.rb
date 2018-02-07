@@ -18,7 +18,7 @@ describe "user sees enrolled students on course show page" do
       expect(page).to have_content("Defense Against the Dark Arts - Enrolled Students")
       expect(page).to have_content("James Potter")
       expect(page).to have_content("Remus Lupin")
-      expect(page).to have_content("Peter Petigrew")
+      expect(page).to have_content("Peter Pettigrew")
       expect(page).to have_content("Sirius Black")
     end
   end
