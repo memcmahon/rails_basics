@@ -12,3 +12,12 @@ Addresses:
     </li>
   <% end %>
 </ul>
+
+Course List:
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+      <%= course.subject %>
+    </li>
+  <% end  %>
+</ul>
